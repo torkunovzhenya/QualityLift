@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MainApp.AppResources"
+             x:Class="MainApp.Views.NewItemPage"
+             Title="New Image">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15">
+                <Label Text="{x:Static local:LocalizationResources.NameLabel}" FontAttributes="Bold"
+                   FontSize="Medium" TextColor="#FF0245"/>
+                <Entry x:Name="TextLabel" 
+                   Placeholder="{x:Static local:LocalizationResources.NamePlaceholder}" PlaceholderColor="#D10038" 
+                   FontSize="Small" TextColor="#FF0245" 
+                   Completed="TextLabel_Completed"/>
+                <Label Text="{x:Static local:LocalizationResources.DescriptionLabel}" FontAttributes="Bold"
+                   FontSize="Medium" TextColor="#FF0245"/>
+                <Label x:Name="DescriptionLabel" 
+                    Text="{x:Static local:LocalizationResources.SizeError}"
+                    FontSize="Small" Margin="0" TextColor="#FF0245"/>
+                <StackLayout x:Name="Options">
+                    <Label Text="Denoise" FontAttributes="Bold"
+                           FontSize="Medium" TextColor="#FF0245"/>
+                    
+                    <Grid x:Name="DenoiseGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+
+                    <Label Text="Scale" FontAttributes="Bold"
+                           FontSize="Medium" TextColor="#FF0245"/>
+                    
+                    <Grid x:Name="ScaleGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+
+                    <Label Text="Format" FontAttributes="Bold"
+                           FontSize="Medium" TextColor="#FF0245"/>
+
+                    <Grid x:Name="FormGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </StackLayout>
+                <Button x:Name="LoadImageButton" Text="LoadImage" HorizontalOptions="FillAndExpand" Clicked="ClickToLoad"/>
+                <Image x:Name="preview" Source="{Binding Item.Image.Source}" VerticalOptions="FillAndExpand" HeightRequest="300"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

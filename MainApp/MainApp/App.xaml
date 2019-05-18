@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MainApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#FF0245</Color>
+            <Color x:Key="TargetColor">#FF0245</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="#242424" />
+                <Setter Property="BarTextColor" Value="#FF0245" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
