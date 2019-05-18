@@ -21,7 +21,8 @@ namespace MainApp.Views
                 }
                 else
                     App.Current.Properties["Language"] = "en-US";
-                LocalizationResources.Culture = new System.Globalization.CultureInfo(App.Current.Properties["Language"].ToString());
+                LangButton.Text = LocalizationResources.ChangeLanguageButton;
+            LocalizationResources.Culture = new System.Globalization.CultureInfo(App.Current.Properties["Language"].ToString());
             };
         }
     }
