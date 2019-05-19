@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace MainApp.Models
@@ -9,10 +10,26 @@ namespace MainApp.Models
         QualityLift,
         Settings
     }
-    public class HomeMenuItem
+    public class HomeMenuItem : INotifyPropertyChanged
     {
+        private string title;
         public MenuItemType Id { get; set; }
 
-        public string Title { get; set; }
+        public string Title
+        {
+            get { return title; }
+            set
+            {
+                title = value;
+                OnPropertyChanged("Title");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
     }
 }

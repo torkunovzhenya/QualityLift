@@ -149,6 +149,10 @@
     <value>Вы действительно хотите удалить этот объект</value>
     <comment>Question for delete</comment>
   </data>
+  <data name="DenoiseLabel" xml:space="preserve">
+    <value>Удаление шумов</value>
+    <comment>Label for radiogroup Denoise</comment>
+  </data>
   <data name="DescriptionLabel" xml:space="preserve">
     <value>Описание</value>
     <comment>Label for description</comment>
@@ -157,9 +161,17 @@
     <value>Ошибка</value>
     <comment>Header of the error message</comment>
   </data>
+  <data name="Example" xml:space="preserve">
+    <value>(Пример)</value>
+    <comment>Example string</comment>
+  </data>
   <data name="FailSaveMessage" xml:space="preserve">
     <value>Ошибка во время сохранения файла</value>
     <comment>Fail of saving image to storage</comment>
+  </data>
+  <data name="FormatLabel" xml:space="preserve">
+    <value>Формат</value>
+    <comment>Label for radiogroup Format</comment>
   </data>
   <data name="GreetingButton" xml:space="preserve">
     <value>Начать улучшать качество изображений!</value>
@@ -168,6 +180,26 @@
   <data name="GreetingLabel" xml:space="preserve">
     <value>Добро пожаловать в QualityLift!</value>
     <comment> Greeting Label</comment>
+  </data>
+  <data name="LanguageHeader" xml:space="preserve">
+    <value>Язык</value>
+    <comment>Header of the language message</comment>
+  </data>
+  <data name="LanguageMessage" xml:space="preserve">
+    <value>Язык интерфейса Русский</value>
+    <comment>Message of language changing</comment>
+  </data>
+  <data name="LoadImageButton" xml:space="preserve">
+    <value>Загрузить изображение</value>
+    <comment>Button to load image</comment>
+  </data>
+  <data name="MaxDenoise" xml:space="preserve">
+    <value>Максимальное</value>
+    <comment>Label for radiobutton Denoise 2</comment>
+  </data>
+  <data name="MidDenoise" xml:space="preserve">
+    <value>Среднее</value>
+    <comment>Label for radiobutton Denoise 1</comment>
   </data>
   <data name="NameLabel" xml:space="preserve">
     <value>Имя</value>
@@ -181,6 +213,14 @@
     <value>Нет</value>
     <comment>Answer no</comment>
   </data>
+  <data name="NoDenoise" xml:space="preserve">
+    <value>Не удалять</value>
+    <comment>Label for radiobutton Denoise 0</comment>
+  </data>
+  <data name="NoScale" xml:space="preserve">
+    <value>Без увеличения</value>
+    <comment>Label for radiobutton Scale 1</comment>
+  </data>
   <data name="NotLoadImageError" xml:space="preserve">
     <value>Загрузите изображение</value>
     <comment>Error raised when image haven't been load</comment>
@@ -188,6 +228,14 @@
   <data name="SaveButton" xml:space="preserve">
     <value>Сохранить</value>
     <comment>Button to save loaded image</comment>
+  </data>
+  <data name="Scale2x" xml:space="preserve">
+    <value>2x увеличение</value>
+    <comment>Label for radiobutton Scale 2</comment>
+  </data>
+  <data name="ScaleLabel" xml:space="preserve">
+    <value>Увеличение</value>
+    <comment>Label for radiogroup Scale</comment>
   </data>
   <data name="SettingsLabel" xml:space="preserve">
     <value>Настройки</value>

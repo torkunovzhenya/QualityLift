@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MainApp.AppResources;
+using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 
 namespace MainApp.Views
 {
@@ -12,16 +14,14 @@ namespace MainApp.Views
     public partial class MenuPage : ContentPage
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-        List<HomeMenuItem> menuItems;
-        public MenuPage()
-        {
-            InitializeComponent();
-
-            menuItems = new List<HomeMenuItem>
+        public static ObservableCollection<HomeMenuItem> menuItems = new ObservableCollection<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.QualityLift, Title="QualityLift" },
                 new HomeMenuItem {Id = MenuItemType.Settings, Title=LocalizationResources.SettingsLabel }
             };
+        public MenuPage()
+        {
+            InitializeComponent();
 
             ListViewMenu.ItemsSource = menuItems;
 
@@ -34,6 +34,8 @@ namespace MainApp.Views
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
                 await RootPage.NavigateFromMenu(id);
             };
+
+            BindingContext = this;
         }
     }
 }

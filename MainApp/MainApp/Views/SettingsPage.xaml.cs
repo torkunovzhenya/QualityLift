@@ -14,16 +14,19 @@ namespace MainApp.Views
             
             LangButton.Clicked += (s, e) =>
             {
-                if (LocalizationResources.Culture.Name.Equals("en-US"))
-                {
-                    App.Current.Properties["Language"] = "ru-RU";
-                    DisplayAlert("dfsd", "dsfsdf", "fsdfs");
-                }
-                else
-                    App.Current.Properties["Language"] = "en-US";
-                LangButton.Text = LocalizationResources.ChangeLanguageButton;
-            LocalizationResources.Culture = new System.Globalization.CultureInfo(App.Current.Properties["Language"].ToString());
+                App.Current.Properties["Language"] = LocalizationResources.Culture.Name.Equals("en-US") ? "ru-RU" : "en-US";
+                LocalizationResources.Culture = new System.Globalization.CultureInfo(App.Current.Properties["Language"].ToString());
+
+                DisplayAlert(LocalizationResources.LanguageHeader, LocalizationResources.LanguageMessage, "OK");
+
+                ChangeLanguage();
             };
+        }
+
+        private void ChangeLanguage()
+        {
+            MenuPage.menuItems[1].Title = LocalizationResources.SettingsLabel;
+            LangButton.Text = LocalizationResources.ChangeLanguageButton;
         }
     }
 }

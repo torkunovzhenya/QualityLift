@@ -133,6 +133,15 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Denoise.
+        /// </summary>
+        public static string DenoiseLabel {
+            get {
+                return ResourceManager.GetString("DenoiseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Description.
         /// </summary>
         public static string DescriptionLabel {
@@ -151,11 +160,29 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на (Example).
+        /// </summary>
+        public static string Example {
+            get {
+                return ResourceManager.GetString("Example", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Error while saving the file.
         /// </summary>
         public static string FailSaveMessage {
             get {
                 return ResourceManager.GetString("FailSaveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Format.
+        /// </summary>
+        public static string FormatLabel {
+            get {
+                return ResourceManager.GetString("FormatLabel", resourceCulture);
             }
         }
         
@@ -174,6 +201,51 @@ namespace MainApp.AppResources {
         public static string GreetingLabel {
             get {
                 return ResourceManager.GetString("GreetingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Language.
+        /// </summary>
+        public static string LanguageHeader {
+            get {
+                return ResourceManager.GetString("LanguageHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The interface language is English.
+        /// </summary>
+        public static string LanguageMessage {
+            get {
+                return ResourceManager.GetString("LanguageMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Load Image.
+        /// </summary>
+        public static string LoadImageButton {
+            get {
+                return ResourceManager.GetString("LoadImageButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Maximum.
+        /// </summary>
+        public static string MaxDenoise {
+            get {
+                return ResourceManager.GetString("MaxDenoise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Middle.
+        /// </summary>
+        public static string MidDenoise {
+            get {
+                return ResourceManager.GetString("MidDenoise", resourceCulture);
             }
         }
         
@@ -205,6 +277,24 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на No denoise.
+        /// </summary>
+        public static string NoDenoise {
+            get {
+                return ResourceManager.GetString("NoDenoise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на No scale.
+        /// </summary>
+        public static string NoScale {
+            get {
+                return ResourceManager.GetString("NoScale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Load the image..
         /// </summary>
         public static string NotLoadImageError {
@@ -219,6 +309,24 @@ namespace MainApp.AppResources {
         public static string SaveButton {
             get {
                 return ResourceManager.GetString("SaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на 2x scale.
+        /// </summary>
+        public static string Scale2x {
+            get {
+                return ResourceManager.GetString("Scale2x", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Scale.
+        /// </summary>
+        public static string ScaleLabel {
+            get {
+                return ResourceManager.GetString("ScaleLabel", resourceCulture);
             }
         }
         

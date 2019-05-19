@@ -149,6 +149,10 @@
     <value>Do you really want to delete this item?</value>
     <comment>Question for delete</comment>
   </data>
+  <data name="DenoiseLabel" xml:space="preserve">
+    <value>Denoise</value>
+    <comment>Label for radiogroup Denoise</comment>
+  </data>
   <data name="DescriptionLabel" xml:space="preserve">
     <value>Description</value>
     <comment>Label for description</comment>
@@ -157,9 +161,17 @@
     <value>Error</value>
     <comment>Header of the error message</comment>
   </data>
+  <data name="Example" xml:space="preserve">
+    <value>(Example)</value>
+    <comment>Example string</comment>
+  </data>
   <data name="FailSaveMessage" xml:space="preserve">
     <value>Error while saving the file</value>
     <comment>Fail of saving image to storage</comment>
+  </data>
+  <data name="FormatLabel" xml:space="preserve">
+    <value>Format</value>
+    <comment>Label for radiogroup Format</comment>
   </data>
   <data name="GreetingButton" xml:space="preserve">
     <value>Start to develop develop images quality!</value>
@@ -168,6 +180,26 @@
   <data name="GreetingLabel" xml:space="preserve">
     <value>Welcome to Quality Lift!</value>
     <comment>Greeting Label</comment>
+  </data>
+  <data name="LanguageHeader" xml:space="preserve">
+    <value>Language</value>
+    <comment>Header of the language message</comment>
+  </data>
+  <data name="LanguageMessage" xml:space="preserve">
+    <value>The interface language is English</value>
+    <comment>Message of language changing</comment>
+  </data>
+  <data name="LoadImageButton" xml:space="preserve">
+    <value>Load Image</value>
+    <comment>Button to load image</comment>
+  </data>
+  <data name="MaxDenoise" xml:space="preserve">
+    <value>Maximum</value>
+    <comment>Label for radiobutton Denoise 2</comment>
+  </data>
+  <data name="MidDenoise" xml:space="preserve">
+    <value>Middle</value>
+    <comment>Label for radiobutton Denoise 1</comment>
   </data>
   <data name="NameLabel" xml:space="preserve">
     <value>Name</value>
@@ -181,6 +213,14 @@
     <value>No</value>
     <comment>Answer no</comment>
   </data>
+  <data name="NoDenoise" xml:space="preserve">
+    <value>No denoise</value>
+    <comment>Label for radiobutton Denoise 0</comment>
+  </data>
+  <data name="NoScale" xml:space="preserve">
+    <value>No scale</value>
+    <comment>Label for radiobutton Scale 1</comment>
+  </data>
   <data name="NotLoadImageError" xml:space="preserve">
     <value>Load the image.</value>
     <comment>Error raised when image haven't been load</comment>
@@ -188,6 +228,14 @@
   <data name="SaveButton" xml:space="preserve">
     <value>Save</value>
     <comment>Button to save loaded image</comment>
+  </data>
+  <data name="Scale2x" xml:space="preserve">
+    <value>2x scale</value>
+    <comment>Label for radiobutton Scale 2</comment>
+  </data>
+  <data name="ScaleLabel" xml:space="preserve">
+    <value>Scale</value>
+    <comment>Label for radiogroup Scale</comment>
   </data>
   <data name="SettingsLabel" xml:space="preserve">
     <value>Settings</value>

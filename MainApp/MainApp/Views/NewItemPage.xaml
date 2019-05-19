@@ -4,24 +4,12 @@
              xmlns:local="clr-namespace:MainApp.AppResources"
              x:Class="MainApp.Views.NewItemPage"
              Title="New Image">
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="cancel.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="save.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
+        <ToolbarItem Clicked="Cancel_Clicked" Icon="back.png"/>
+        <ToolbarItem Clicked="Save_Clicked" Icon="save.png"/>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="20" Padding="15">
@@ -37,7 +25,7 @@
                     Text="{x:Static local:LocalizationResources.SizeError}"
                     FontSize="Small" Margin="0" TextColor="#FF0245"/>
                 <StackLayout x:Name="Options">
-                    <Label Text="Denoise" FontAttributes="Bold"
+                    <Label Text="{x:Static local:LocalizationResources.DenoiseLabel}" FontAttributes="Bold"
                            FontSize="Medium" TextColor="#FF0245"/>
                     
                     <Grid x:Name="DenoiseGrid">
@@ -54,7 +42,7 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
 
-                    <Label Text="Scale" FontAttributes="Bold"
+                    <Label Text="{x:Static local:LocalizationResources.ScaleLabel}" FontAttributes="Bold"
                            FontSize="Medium" TextColor="#FF0245"/>
                     
                     <Grid x:Name="ScaleGrid">
@@ -70,7 +58,7 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
 
-                    <Label Text="Format" FontAttributes="Bold"
+                    <Label Text="{x:Static local:LocalizationResources.FormatLabel}" FontAttributes="Bold"
                            FontSize="Medium" TextColor="#FF0245"/>
 
                     <Grid x:Name="FormGrid">
@@ -86,7 +74,8 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </StackLayout>
-                <Button x:Name="LoadImageButton" Text="LoadImage" HorizontalOptions="FillAndExpand" Clicked="ClickToLoad"/>
+                <Button x:Name="LoadImageButton" Text="{x:Static local:LocalizationResources.LoadImageButton}" 
+                        HorizontalOptions="FillAndExpand" Clicked="ClickToLoad"/>
                 <Image x:Name="preview" Source="{Binding Item.Image.Source}" VerticalOptions="FillAndExpand" HeightRequest="300"/>
             </StackLayout>
         </ScrollView>

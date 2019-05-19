@@ -7,10 +7,13 @@
         <StackLayout>
             <Label x:Name="GreetingLabel"
                 FontSize="30" TextColor="White"
-                VerticalOptions="CenterAndExpand" 
+                HorizontalTextAlignment="Center"
+                VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
+            <Image Source="icon.png" HorizontalOptions="CenterAndExpand"/>
             <Button x:Name="StartButton"
                     BorderRadius="0"
+                    BackgroundColor="Gray"
                     TextColor="White"
                     Clicked="Button_Clicked"/>
             <Label x:Name="MadeBy"

@@ -5,13 +5,7 @@
               Title="{Binding Title}"
              x:Name="BrowseItemsPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="add.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
+        <ToolbarItem Clicked="AddItem_Clicked" Icon="add.png"/>
     </ContentPage.ToolbarItems>
 
     <StackLayout>
@@ -20,6 +14,7 @@
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
                 RefreshCommand="{Binding LoadItemsCommand}"
+                SeparatorColor="Black"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
@@ -37,7 +32,7 @@
                                 FontAttributes="Italic"/>
                                 <Label Text="{Binding Description}" 
                                 TextColor="#FF0245"
-                                LineBreakMode="NoWrap"
+                                LineBreakMode="TailTruncation"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="16" />
                             </StackLayout>

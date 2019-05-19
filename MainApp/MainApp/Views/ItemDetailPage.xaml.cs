@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 using MainApp.Models;
 using MainApp.ViewModels;
 using MainApp.Services;
+using MainApp.AppResources;
 
 namespace MainApp.Views
 {
@@ -28,36 +29,15 @@ namespace MainApp.Views
             downloader.OnFileDownloaded += OnFileDownloaded;
         }
 
-        public ItemDetailPage()
-        {
-            InitializeComponent();
-
-            Item = new Item
-            {
-                Name = "Item 1",
-                Description = "This is an item description.",
-                Image = new Image()
-            };
-
-            Item.Image.Source = "f0042.jpg";
-            viewModel = new ItemDetailViewModel(Item);
-            BindingContext = viewModel;
-        }
-
         async void DeleteItem_Clicked(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("Delete Item", "Do you really want to delete this item?", "Yes", "No");
+            bool answer = await DisplayAlert(LocalizationResources.DeleteHeader, LocalizationResources.DeleteMessage,
+                LocalizationResources.YesAns, LocalizationResources.NoAns);
 
             if (!answer)
                 return;
 
             MessagingCenter.Send(this, "RemoveItem", Item);
-
-            string s = "";
-            foreach (string key in App.Current.Properties.Keys)
-                s += "*" + key;
-            await DisplayAlert("Dictionary", s, "OK");
-            await DisplayAlert("Dictionary", App.Current.Properties["items"].ToString(), "OK");
 
             await Navigation.PopModalAsync();
         }
@@ -71,11 +51,11 @@ namespace MainApp.Views
         {
             if (e.FileSaved)
             {
-                await DisplayAlert("QualityLift", "File Saved Successfully", "Close");
+                await DisplayAlert("QualityLift", LocalizationResources.SuccessSaveMessage, "OK");
             }
             else
             {
-                await DisplayAlert("QualityLift", "Error while saving the file", "Close");
+                await DisplayAlert("QualityLift", LocalizationResources.FailSaveMessage, "OK");
             }
         }
     }

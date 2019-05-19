@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using MainApp.Models;
 using MainApp.Views;
 using MainApp.ViewModels;
+using MainApp.AppResources;
 
 namespace MainApp.Views
 {

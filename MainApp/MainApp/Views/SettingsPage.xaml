@@ -7,7 +7,7 @@
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
-        <vm:LanguageViewModel />
+        <vm:SettingsViewModel />
     </ContentPage.BindingContext>
     
     <ContentPage.Resources>

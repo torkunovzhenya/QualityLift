@@ -6,9 +6,9 @@ using MainApp.AppResources;
 
 namespace MainApp.ViewModels
 {
-    public class LanguageViewModel : BaseViewModel
+    public class SettingsViewModel : BaseViewModel
     {
-        public LanguageViewModel()
+        public SettingsViewModel()
         {
             Title = LocalizationResources.SettingsLabel;
         }

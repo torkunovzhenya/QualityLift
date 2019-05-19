@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MainApp.Models;
+using MainApp.Services;
 using Xamarin.Forms;
 using Plugin.FilePicker;
 using System.IO;
+using MainApp.AppResources;
 
 namespace MainApp.Services
 {
@@ -18,28 +20,21 @@ namespace MainApp.Services
             List<Item> mockItems = new List<Item>();
 
             if (App.Current.Properties.ContainsKey("items"))
-                mockItems = GetItemsFromDictionary();
+                mockItems = AppDictionaryManager.GetItemsFromDictionary();
             else
             {
                 mockItems = new List<Item>
                 {
-                    new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Description="This is an item description.",
-                    Preview = new Image(), Image = new Image(), Uri = "",
-                    Format = ".jpg"},
-                    new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Description="This is an item description.",
-                    Preview = new Image(), Image = new Image(), Uri = "",
-                    Format = ".jpg"},
-                    new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Description="This is an item description.",
-                    Preview = new Image(), Image = new Image(), Uri = "",
-                    Format = ".jpg"},
+                    new Item { Id = Guid.NewGuid().ToString(), Name = "First item" + LocalizationResources.Example,
+                        Preview = new Image() { Source = "f0011.jpg" }, Image = new Image() { Source = "f0012.jpg" }, Uri = "",
+                        Format = ".jpg", Description="This is an item description."},
+                    new Item { Id = Guid.NewGuid().ToString(), Name = "Second item" + LocalizationResources.Example,
+                        Preview = new Image() { Source = "f0021.jpg" }, Image = new Image() { Source = "f0022.jpg" }, Uri = "",
+                        Format = ".jpg", Description="This is an item description."},
+                    new Item { Id = Guid.NewGuid().ToString(), Name = "Third item" + LocalizationResources.Example,
+                        Preview = new Image() { Source = "f0031.jpg" }, Image = new Image() { Source = "f0032.jpg" }, Uri = "",
+                        Format = ".jpg", Description="This is an item description."},
                 };
-
-                mockItems[0].Preview.Source = "f0012.jpg";
-                mockItems[1].Preview.Source = "f0022.jpg";
-                mockItems[2].Preview.Source = "f0032.jpg";
-                mockItems[0].Image.Source = "f0012.jpg";
-                mockItems[1].Image.Source = "f0022.jpg";
-                mockItems[2].Image.Source = "f0032.jpg";
             }
 
             foreach (var item in mockItems)
@@ -61,13 +56,7 @@ namespace MainApp.Services
             var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
             items.Remove(oldItem);
 
-            App.Current.Properties["items"] = App.Current.Properties["items"].ToString().Replace($"*{id}", "");
-            if (App.Current.Properties.ContainsKey(id))
-            {
-                App.Current.Properties.Remove(id);
-                App.Current.Properties.Remove(id + "data1");
-                App.Current.Properties.Remove(id + "data2");
-            }
+            AppDictionaryManager.Delete(id);
 
             return await Task.FromResult(true);
         }
@@ -80,33 +69,6 @@ namespace MainApp.Services
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
-        }
-
-        private List<Item> GetItemsFromDictionary()
-        {
-            List<Item> dictItems = new List<Item>();
-            string[] ids = App.Current.Properties["items"].ToString().Split(new char[] { '*' }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string id in ids)
-            {
-                byte[] previewimg = Convert.FromBase64String(App.Current.Properties[$"{id}data1"].ToString());
-                byte[] imageimg = Convert.FromBase64String(App.Current.Properties[$"{id}data2"].ToString());
-
-                string[] elements = App.Current.Properties[id].ToString().Split(new char[] { '*' }, StringSplitOptions.RemoveEmptyEntries);
-
-                dictItems.Add(new Item
-                {
-                    Preview = new Image { Source = ImageSource.FromStream(() => new MemoryStream(previewimg)) },
-                    Image = new Image { Source = ImageSource.FromStream(() => new MemoryStream(imageimg)) },
-                    Id = id,
-                    Name = elements[0],
-                    Description = elements[1],
-                    Uri = elements[2],
-                    Format = elements[3]
-                });
-            }
-
-            return dictItems;
         }
     }
 }

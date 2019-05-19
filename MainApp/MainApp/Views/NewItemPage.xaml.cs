@@ -17,6 +17,7 @@ using MainApp.AppResources;
 using Java.Interop;
 using System.IO;
 using System.Net;
+using MainApp.Services;
 
 namespace MainApp.Views
 {
@@ -67,9 +68,9 @@ namespace MainApp.Views
             #region DenoiseRadioGroup
             Denoise = new RadioGroup("Denoise", 1, new RadioButton[]
             {
-                new RadioButton("0(no denoise)", false, 0, new Button{ Style = InvisibleButton }),
-                new RadioButton("1(middle)", true, 1, new Button{ Style = InvisibleButton }),
-                new RadioButton("2(maximum)", false, 2, new Button{ Style = InvisibleButton })
+                new RadioButton($"0({LocalizationResources.NoDenoise})", false, 0, new Button{ Style = InvisibleButton }),
+                new RadioButton($"1({LocalizationResources.MidDenoise})", true, 1, new Button{ Style = InvisibleButton }),
+                new RadioButton($"2({LocalizationResources.MaxDenoise})", false, 2, new Button{ Style = InvisibleButton })
             });
 
             foreach (RadioButton rb in Denoise.Buttons)
@@ -82,8 +83,8 @@ namespace MainApp.Views
             #region ScaleRadioGroup
             Scale = new RadioGroup("Scale", 1, new RadioButton[]
             {
-                new RadioButton("No scale", false, 0, new Button{ Style = InvisibleButton }),
-                new RadioButton("2x scale", true, 1, new Button{ Style = InvisibleButton })
+                new RadioButton(LocalizationResources.NoScale, false, 0, new Button{ Style = InvisibleButton }),
+                new RadioButton(LocalizationResources.Scale2x, true, 1, new Button{ Style = InvisibleButton })
             });
 
             foreach (RadioButton rb in Scale.Buttons)
@@ -203,41 +204,10 @@ namespace MainApp.Views
             Item.Name = TextLabel.Text;
         }
 
-        private async void AddItem(Item item)
+        private void AddItem(Item item)
         {
-            //string s = "";
-            //foreach (string key in App.Current.Properties.Keys)
-            //    s += "*" + key;
-            //if (await DisplayAlert("Dictionary", s, "OK", "no"))
-            //    return;
-
-            if (!App.Current.Properties.ContainsKey("items"))
-                App.Current.Properties.Add("items", "");
-
-            App.Current.Properties["items"] += $"*{item.Id}";
-
-            AddToDictionary(item);
-
+            AppDictionaryManager.Add(item, photo.GetStream());
             MessagingCenter.Send(this, "AddItem", Item);
-
-            DisplayAlert("Dictionary", App.Current.Properties["items"].ToString(), "OK");
-        }
-        private void AddToDictionary(Item item)
-        {
-            App.Current.Properties.Add($"{item.Id}", $"*{item.Name}*{item.Description}*{item.Uri}*{item.Format}*");
-            
-            using (Stream file = photo.GetStream())
-            {
-                byte[] data = new byte[file.Length];
-                file.Read(data, 0, data.Length);
-                App.Current.Properties.Add($"{item.Id}data1", Convert.ToBase64String(data));
-            }
-
-            using (WebClient webClient = new WebClient())
-            {
-                byte[] imageBytes = webClient.DownloadData(item.Uri);
-                App.Current.Properties.Add($"{item.Id}data2", Convert.ToBase64String(webClient.DownloadData(item.Uri)));
-            }
         }
     }
 }
