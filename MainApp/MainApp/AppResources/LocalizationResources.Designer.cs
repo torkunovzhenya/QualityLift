@@ -97,11 +97,20 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Couldn&apos;t reach the server.\nPlease try again later..
+        ///   Ищет локализованную строку, похожую на Couldn&apos;t reach the server. Please try again later..
         /// </summary>
         public static string ConnectionError {
             get {
                 return ResourceManager.GetString("ConnectionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Dark.
+        /// </summary>
+        public static string DarkLabel {
+            get {
+                return ResourceManager.GetString("DarkLabel", resourceCulture);
             }
         }
         
@@ -205,6 +214,15 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Where to store processed images.
+        /// </summary>
+        public static string ImageStoreLabel {
+            get {
+                return ResourceManager.GetString("ImageStoreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Language.
         /// </summary>
         public static string LanguageHeader {
@@ -219,6 +237,15 @@ namespace MainApp.AppResources {
         public static string LanguageMessage {
             get {
                 return ResourceManager.GetString("LanguageMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Light.
+        /// </summary>
+        public static string LightLabel {
+            get {
+                return ResourceManager.GetString("LightLabel", resourceCulture);
             }
         }
         
@@ -304,6 +331,24 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на On device(less work with internet, but takes up memory).
+        /// </summary>
+        public static string OnDeviceLabel {
+            get {
+                return ResourceManager.GetString("OnDeviceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download from internet(need internet, don&apos;t use memory to store).
+        /// </summary>
+        public static string OnInternetLabel {
+            get {
+                return ResourceManager.GetString("OnInternetLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Save.
         /// </summary>
         public static string SaveButton {
@@ -363,6 +408,24 @@ namespace MainApp.AppResources {
         public static string SuccessSaveMessage {
             get {
                 return ResourceManager.GetString("SuccessSaveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Theme of interface.
+        /// </summary>
+        public static string ThemeLabel {
+            get {
+                return ResourceManager.GetString("ThemeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Theme has been changed. Restart the app..
+        /// </summary>
+        public static string ThemeMessage {
+            get {
+                return ResourceManager.GetString("ThemeMessage", resourceCulture);
             }
         }
         

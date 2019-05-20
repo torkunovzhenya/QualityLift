@@ -134,8 +134,12 @@
     <comment>Label to change language</comment>
   </data>
   <data name="ConnectionError" xml:space="preserve">
-    <value>Couldn't reach the server.\nPlease try again later.</value>
+    <value>Couldn't reach the server. Please try again later.</value>
     <comment>Error raised when lost connection</comment>
+  </data>
+  <data name="DarkLabel" xml:space="preserve">
+    <value>Dark</value>
+    <comment>Label for radiobutton Dark Theme</comment>
   </data>
   <data name="DeleteButton" xml:space="preserve">
     <value>Delete</value>
@@ -181,6 +185,10 @@
     <value>Welcome to Quality Lift!</value>
     <comment>Greeting Label</comment>
   </data>
+  <data name="ImageStoreLabel" xml:space="preserve">
+    <value>Where to store processed images</value>
+    <comment>Label for radiogroup ImageStorage</comment>
+  </data>
   <data name="LanguageHeader" xml:space="preserve">
     <value>Language</value>
     <comment>Header of the language message</comment>
@@ -188,6 +196,10 @@
   <data name="LanguageMessage" xml:space="preserve">
     <value>The interface language is English</value>
     <comment>Message of language changing</comment>
+  </data>
+  <data name="LightLabel" xml:space="preserve">
+    <value>Light</value>
+    <comment>Label for radiobutton Light Theme</comment>
   </data>
   <data name="LoadImageButton" xml:space="preserve">
     <value>Load Image</value>
@@ -225,6 +237,14 @@
     <value>Load the image.</value>
     <comment>Error raised when image haven't been load</comment>
   </data>
+  <data name="OnDeviceLabel" xml:space="preserve">
+    <value>On device(less work with internet, but takes up memory)</value>
+    <comment>Label for radiobutton On Device</comment>
+  </data>
+  <data name="OnInternetLabel" xml:space="preserve">
+    <value>Download from internet(need internet, don't use memory to store)</value>
+    <comment>Label for radiobutton On Internet</comment>
+  </data>
   <data name="SaveButton" xml:space="preserve">
     <value>Save</value>
     <comment>Button to save loaded image</comment>
@@ -252,6 +272,14 @@
   <data name="SuccessSaveMessage" xml:space="preserve">
     <value>File Saved Successfully</value>
     <comment>Success of saving image to storage</comment>
+  </data>
+  <data name="ThemeLabel" xml:space="preserve">
+    <value>Theme of interface</value>
+    <comment>Label for radiogroup Theme</comment>
+  </data>
+  <data name="ThemeMessage" xml:space="preserve">
+    <value>Theme has been changed. Restart the app.</value>
+    <comment>Message of changing theme</comment>
   </data>
   <data name="YesAns" xml:space="preserve">
     <value>Yes</value>

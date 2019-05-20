@@ -17,7 +17,6 @@ using MainApp.AppResources;
 using Java.Interop;
 using System.IO;
 using System.Net;
-using MainApp.Services;
 
 namespace MainApp.Views
 {
@@ -38,17 +37,6 @@ namespace MainApp.Views
 
         private bool Loaded = false;
 
-        private Style InvisibleButton = new Style(typeof(Button))
-        {
-            Setters = {
-                new Setter { Property = Button.BackgroundColorProperty, Value = Color.FromHex ("#242424") },
-                new Setter { Property = Button.TextColorProperty, Value = Color.FromHex ("#ff0245") },
-                new Setter { Property = Button.BorderWidthProperty, Value = 0 },
-                new Setter { Property = Button.FontSizeProperty, Value = 10 },
-                new Setter { Property = Button.PaddingProperty, Value = (0, 0, 0, 0) }
-           }
-        };
-
         public NewItemPage()
         {
             InitializeComponent();
@@ -68,9 +56,9 @@ namespace MainApp.Views
             #region DenoiseRadioGroup
             Denoise = new RadioGroup("Denoise", 1, new RadioButton[]
             {
-                new RadioButton($"0({LocalizationResources.NoDenoise})", false, 0, new Button{ Style = InvisibleButton }),
-                new RadioButton($"1({LocalizationResources.MidDenoise})", true, 1, new Button{ Style = InvisibleButton }),
-                new RadioButton($"2({LocalizationResources.MaxDenoise})", false, 2, new Button{ Style = InvisibleButton })
+                new RadioButton($"0({LocalizationResources.NoDenoise})", false, 0, new Button{ Style = Styles.InvisibleButton }),
+                new RadioButton($"1({LocalizationResources.MidDenoise})", true, 1, new Button{ Style = Styles.InvisibleButton }),
+                new RadioButton($"2({LocalizationResources.MaxDenoise})", false, 2, new Button{ Style = Styles.InvisibleButton })
             });
 
             foreach (RadioButton rb in Denoise.Buttons)
@@ -83,8 +71,8 @@ namespace MainApp.Views
             #region ScaleRadioGroup
             Scale = new RadioGroup("Scale", 1, new RadioButton[]
             {
-                new RadioButton(LocalizationResources.NoScale, false, 0, new Button{ Style = InvisibleButton }),
-                new RadioButton(LocalizationResources.Scale2x, true, 1, new Button{ Style = InvisibleButton })
+                new RadioButton(LocalizationResources.NoScale, false, 0, new Button{ Style = Styles.InvisibleButton }),
+                new RadioButton(LocalizationResources.Scale2x, true, 1, new Button{ Style = Styles.InvisibleButton })
             });
 
             foreach (RadioButton rb in Scale.Buttons)
@@ -97,8 +85,8 @@ namespace MainApp.Views
             #region FormatRadioGroup
             Form = new RadioGroup("Format", 0, new RadioButton[]
             {
-                new RadioButton(".jpeg", true, 0, new Button{ Style = InvisibleButton }),
-                new RadioButton(".png", false, 1, new Button{ Style = InvisibleButton })
+                new RadioButton(".jpeg", true, 0, new Button{ Style = Styles.InvisibleButton }),
+                new RadioButton(".png", false, 1, new Button{ Style = Styles.InvisibleButton })
             });
 
             foreach (RadioButton rb in Form.Buttons)
@@ -178,7 +166,7 @@ namespace MainApp.Views
             //}
             //#endregion
 
-            Item.Uri = "https://waifu2x.booru.pics/outfiles/0b75c03c7840bab691a3e83c0ec1c67d4d8b20b0_s2_n1.jpg";
+            Item.Uri = "https://waifu2x.booru.pics/outfiles/bd78f03a969ec43aa97602f996215c782d418274_s2_n1.jpg";
             Item.Id = Guid.NewGuid().ToString();
             Item.Format = format == "jpeg" ? ".jpg" : ".png";
             Item.Description = $"Time - {DateTime.Now.ToString()}, Scale = {scale}\n" +

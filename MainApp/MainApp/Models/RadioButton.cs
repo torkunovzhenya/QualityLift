@@ -28,7 +28,7 @@ namespace MainApp.Models
 
             ImageButton = new ImageButton();
             ImageButton.BorderWidth = 0;
-            ImageButton.BackgroundColor = Color.FromHex("#242424");
+            ImageButton.BackgroundColor = Styles.BackgroundColor;
             ImageButton.Clicked += (s, e) =>
             {
                 Status = !Status;

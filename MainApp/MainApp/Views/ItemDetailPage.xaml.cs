@@ -44,7 +44,7 @@ namespace MainApp.Views
         
         private void Download(object sender, EventArgs e)
         {
-            downloader.DownloadFile(Item.Uri, "QualityLift Images", Item.Name + Item.Format);
+            downloader.DownloadFile(Item.Uri, App.Current.Properties[$"{Item.Id}data2"].ToString(), Item.Name + Item.Format);
         }
 
         private async void OnFileDownloaded(object sender, DownloadEventArgs e)
@@ -57,6 +57,11 @@ namespace MainApp.Views
             {
                 await DisplayAlert("QualityLift", LocalizationResources.FailSaveMessage, "OK");
             }
+        }
+
+        private async void Back_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }

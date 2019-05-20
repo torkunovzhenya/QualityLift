@@ -134,8 +134,12 @@
     <comment>Label to change language</comment>
   </data>
   <data name="ConnectionError" xml:space="preserve">
-    <value>Нет связи с сервером.\nПовторите попытку позже.</value>
+    <value>Нет связи с сервером. Повторите попытку позже.</value>
     <comment>Error raised when lost connection</comment>
+  </data>
+  <data name="DarkLabel" xml:space="preserve">
+    <value>Темная</value>
+    <comment>Label for radiobutton Dark Theme</comment>
   </data>
   <data name="DeleteButton" xml:space="preserve">
     <value>Удалить</value>
@@ -181,6 +185,10 @@
     <value>Добро пожаловать в QualityLift!</value>
     <comment> Greeting Label</comment>
   </data>
+  <data name="ImageStoreLabel" xml:space="preserve">
+    <value>Где хранить обработанные изображения</value>
+    <comment>Label for radiogroup ImageStorage</comment>
+  </data>
   <data name="LanguageHeader" xml:space="preserve">
     <value>Язык</value>
     <comment>Header of the language message</comment>
@@ -188,6 +196,10 @@
   <data name="LanguageMessage" xml:space="preserve">
     <value>Язык интерфейса Русский</value>
     <comment>Message of language changing</comment>
+  </data>
+  <data name="LightLabel" xml:space="preserve">
+    <value>Светлая</value>
+    <comment>Label for radiobutton Light Theme</comment>
   </data>
   <data name="LoadImageButton" xml:space="preserve">
     <value>Загрузить изображение</value>
@@ -225,6 +237,14 @@
     <value>Загрузите изображение</value>
     <comment>Error raised when image haven't been load</comment>
   </data>
+  <data name="OnDeviceLabel" xml:space="preserve">
+    <value>В памяти устройства(меньше работы с интернетом, но занимает память)</value>
+    <comment>Label for radiobutton On Device</comment>
+  </data>
+  <data name="OnInternetLabel" xml:space="preserve">
+    <value>Загружать с интернета(требуется подключение к интернету, не занимает память)</value>
+    <comment>Label for radiobutton On Internet</comment>
+  </data>
   <data name="SaveButton" xml:space="preserve">
     <value>Сохранить</value>
     <comment>Button to save loaded image</comment>
@@ -252,6 +272,14 @@
   <data name="SuccessSaveMessage" xml:space="preserve">
     <value>Файл успешно сохранен</value>
     <comment>Success of saving image to storage</comment>
+  </data>
+  <data name="ThemeLabel" xml:space="preserve">
+    <value>Тема интерфейса</value>
+    <comment>Label for radiogroup Theme</comment>
+  </data>
+  <data name="ThemeMessage" xml:space="preserve">
+    <value>Тема была изменена. Перезапустите приложение.</value>
+    <comment>Message of changing theme</comment>
   </data>
   <data name="YesAns" xml:space="preserve">
     <value>Да</value>

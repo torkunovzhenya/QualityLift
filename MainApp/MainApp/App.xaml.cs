@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using MainApp.Views;
 using System.Globalization;
 using MainApp.AppResources;
+using MainApp.Models;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MainApp
@@ -13,22 +14,22 @@ namespace MainApp
 
         public App()
         {
-            InitializeComponent();
+            Styles.ChangeThemeColor();
 
-            //CultureInfo ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
-            //LocalizationResources.Culture = ci;
-            //DependencyService.Get<ILocalize>().SetLocale(ci);
-            //App.Current.Properties.Clear();
-            //App.Current.Properties.Add("items", "");
-            if (App.Current.Properties.ContainsKey("language"))
-                App.Current.Properties.Remove("language");
+            InitializeComponent();
+            
             if (!App.Current.Properties.ContainsKey("Language"))
                 App.Current.Properties.Add("Language", "ru-RU");
+
+            if (!App.Current.Properties.ContainsKey("Theme"))
+                App.Current.Properties.Add("Theme", "Dark");
+
+            if (!App.Current.Properties.ContainsKey("ImageStorage"))
+                App.Current.Properties.Add("ImageStorage", "On device");
 
             LocalizationResources.Culture = new CultureInfo(App.Current.Properties["Language"].ToString());
 
             MainPage = new StartPage(this);
-            //MainPage = new MainPage();
         }
 
         protected override void OnStart()

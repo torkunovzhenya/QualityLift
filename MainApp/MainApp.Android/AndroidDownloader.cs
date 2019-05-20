@@ -23,9 +23,9 @@ namespace MainApp.Droid
     {
         public event EventHandler<DownloadEventArgs> OnFileDownloaded;
 
-        public void DownloadFile(string url, string folder, string name)
+        public void DownloadFile(string url, string data, string name)
         {
-            string pathToNewFolder = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, folder);
+            string pathToNewFolder = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "QualityLift Images");
             Directory.CreateDirectory(pathToNewFolder);
 
             try
@@ -33,27 +33,28 @@ namespace MainApp.Droid
                 WebClient webClient = new WebClient();
                 webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
                 string pathToNewFile = Path.Combine(pathToNewFolder, name);
-                webClient.DownloadFileAsync(new Uri(url), pathToNewFile);
+
+                if (data != "No data")
+                {
+                    using (FileStream file = new FileStream(pathToNewFile, FileMode.Create, FileAccess.Write))
+                    {
+                        byte[] d = Convert.FromBase64String(data);
+                        file.Write(d, 0, d.Length);
+                        OnFileDownloaded?.Invoke(this, new DownloadEventArgs(true));
+                    }
+                }
+                else
+                    webClient.DownloadFileAsync(new Uri(url), pathToNewFile);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                if (OnFileDownloaded != null)
-                    OnFileDownloaded.Invoke(this, new DownloadEventArgs(false));
+                OnFileDownloaded?.Invoke(this, new DownloadEventArgs(false));
             }
         }
 
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
-            if (e.Error != null)
-            {
-                if (OnFileDownloaded != null)
-                    OnFileDownloaded.Invoke(this, new DownloadEventArgs(false));
-            }
-            else
-            {
-                if (OnFileDownloaded != null)
-                    OnFileDownloaded.Invoke(this, new DownloadEventArgs(true));
-            }
+            OnFileDownloaded?.Invoke(this, new DownloadEventArgs(e.Error == null));
         }
     }
 }

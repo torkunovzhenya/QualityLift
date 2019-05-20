@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MainApp.AppResources"
+             xmlns:colores="clr-namespace:MainApp.Models"
              x:Class="MainApp.Views.ItemDetailPage"
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="Back_Clicked" Icon="back.png"/>
         <ToolbarItem Clicked="DeleteItem_Clicked" Icon="delete.png"/>
     </ContentPage.ToolbarItems>
     
@@ -17,7 +19,7 @@
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand"/>
         <Button Text="{x:Static local:LocalizationResources.StorageSaveButton}"
-            HorizontalOptions="FillAndExpand"
+            Style="{x:Static colores:Styles.CommonButton}"
             Clicked="Download"/>
     </StackLayout>
 </ContentPage>

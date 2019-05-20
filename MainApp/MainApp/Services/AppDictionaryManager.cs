@@ -27,11 +27,14 @@ namespace MainApp.Services
 
             try
             {
-                using (WebClient webClient = new WebClient())
-                {
-                    byte[] imageBytes = webClient.DownloadData(item.Uri);
-                    App.Current.Properties.Add($"{item.Id}data2", Convert.ToBase64String(webClient.DownloadData(item.Uri)));
-                }
+                if (App.Current.Properties["ImageStorage"].ToString() == "On device")
+                    using (WebClient webClient = new WebClient())
+                    {
+                        byte[] imageBytes = webClient.DownloadData(item.Uri);
+                        App.Current.Properties.Add($"{item.Id}data2", Convert.ToBase64String(webClient.DownloadData(item.Uri)));
+                    }
+                else
+                    App.Current.Properties.Add($"{item.Id}data2", "No data");
             }
             catch (WebException)
             {

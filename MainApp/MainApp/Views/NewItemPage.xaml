@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MainApp.AppResources"
+             xmlns:colores="clr-namespace:MainApp.Models"
              x:Class="MainApp.Views.NewItemPage"
              Title="New Image">
 
@@ -75,7 +76,7 @@
                     </Grid>
                 </StackLayout>
                 <Button x:Name="LoadImageButton" Text="{x:Static local:LocalizationResources.LoadImageButton}" 
-                        HorizontalOptions="FillAndExpand" Clicked="ClickToLoad"/>
+                        Style="{x:Static colores:Styles.CommonButton}" Clicked="ClickToLoad"/>
                 <Image x:Name="preview" Source="{Binding Item.Image.Source}" VerticalOptions="FillAndExpand" HeightRequest="300"/>
             </StackLayout>
         </ScrollView>
