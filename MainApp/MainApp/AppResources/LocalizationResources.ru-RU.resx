@@ -261,6 +261,10 @@
     <value>Настройки</value>
     <comment>Menu item "Language"</comment>
   </data>
+  <data name="ShowInitialButton" xml:space="preserve">
+    <value>Показать исходное изображение</value>
+    <comment>Buttun to show initial image</comment>
+  </data>
   <data name="SizeError" xml:space="preserve">
     <value>Максимальный размер изображения - 8M, 3840x3840</value>
     <comment>Error raised when the image is too big</comment>

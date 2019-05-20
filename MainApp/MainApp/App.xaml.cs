@@ -14,10 +14,6 @@ namespace MainApp
 
         public App()
         {
-            Styles.ChangeThemeColor();
-
-            InitializeComponent();
-            
             if (!App.Current.Properties.ContainsKey("Language"))
                 App.Current.Properties.Add("Language", "ru-RU");
 
@@ -26,6 +22,10 @@ namespace MainApp
 
             if (!App.Current.Properties.ContainsKey("ImageStorage"))
                 App.Current.Properties.Add("ImageStorage", "On device");
+
+            Styles.ChangeThemeColor();
+
+            InitializeComponent();
 
             LocalizationResources.Culture = new CultureInfo(App.Current.Properties["Language"].ToString());
 

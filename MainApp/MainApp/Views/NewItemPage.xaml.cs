@@ -146,27 +146,26 @@ namespace MainApp.Views
             scale = Scale.Active + 1;
             format = Form.Active == 0 ? "jpeg" : "png";
 
-            //#region PostRequest
-            //try
-            //{
-            //    Item.Uri = ImageExchange.Post(denoise, scale, format, photo.GetStream());
-            //}
-            //catch (FormatException ex)
-            //{
-            //    await DisplayAlert(LocalizationResources.ErrorHeader, ex.Message, "OK");
-            //    Loaded = false;
-            //    return;
-            //}
-            //catch (Exception)
-            //{
-            //    await DisplayAlert(LocalizationResources.ErrorHeader,
-            //        LocalizationResources.ConnectionError, "OK");
-            //    Loaded = false;
-            //    return;
-            //}
-            //#endregion
-
-            Item.Uri = "https://waifu2x.booru.pics/outfiles/bd78f03a969ec43aa97602f996215c782d418274_s2_n1.jpg";
+            #region PostRequest
+            try
+            {
+                Item.Uri = ImageExchange.Post(denoise, scale, format, photo.GetStream());
+            }
+            catch (FormatException ex)
+            {
+                await DisplayAlert(LocalizationResources.ErrorHeader, ex.Message, "OK");
+                Loaded = false;
+                return;
+            }
+            catch (Exception)
+            {
+                await DisplayAlert(LocalizationResources.ErrorHeader,
+                    LocalizationResources.ConnectionError, "OK");
+                Loaded = false;
+                return;
+            }
+            #endregion
+            
             Item.Id = Guid.NewGuid().ToString();
             Item.Format = format == "jpeg" ? ".jpg" : ".png";
             Item.Description = $"Time - {DateTime.Now.ToString()}, Scale = {scale}\n" +

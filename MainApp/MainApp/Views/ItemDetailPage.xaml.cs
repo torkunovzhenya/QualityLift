@@ -63,5 +63,15 @@ namespace MainApp.Views
         {
             await Navigation.PopModalAsync();
         }
+
+        private void Button_Pressed(object sender, EventArgs e)
+        {
+            ItemImage.Source = Item.Preview.Source;
+        }
+
+        private void Button_Released(object sender, EventArgs e)
+        {
+            ItemImage.Source = Item.Image.Source;
+        }
     }
 }

@@ -385,6 +385,15 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Show Initial Image.
+        /// </summary>
+        public static string ShowInitialButton {
+            get {
+                return ResourceManager.GetString("ShowInitialButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Image maximum size - 8M, 3840x3840.
         /// </summary>
         public static string SizeError {
