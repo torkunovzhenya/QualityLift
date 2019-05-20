@@ -142,6 +142,24 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Image Location Denied.
+        /// </summary>
+        public static string DeniedPermissionsHeader {
+            get {
+                return ResourceManager.GetString("DeniedPermissionsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Can not continue, try again.
+        /// </summary>
+        public static string DeniedPermissionsMessage {
+            get {
+                return ResourceManager.GetString("DeniedPermissionsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Denoise.
         /// </summary>
         public static string DenoiseLabel {
@@ -399,6 +417,24 @@ namespace MainApp.AppResources {
         public static string SizeError {
             get {
                 return ResourceManager.GetString("SizeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Storage permission.
+        /// </summary>
+        public static string StoragePermissionHeader {
+            get {
+                return ResourceManager.GetString("StoragePermissionHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Need a storage permission to load the image.
+        /// </summary>
+        public static string StoragePermissionMessage {
+            get {
+                return ResourceManager.GetString("StoragePermissionMessage", resourceCulture);
             }
         }
         

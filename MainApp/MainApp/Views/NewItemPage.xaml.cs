@@ -106,7 +106,7 @@ namespace MainApp.Views
             {
                 if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
                 {
-                    await DisplayAlert("Storage permisson", "Need a storage permission to load the image", "OK");
+                    await DisplayAlert(LocalizationResources.StoragePermissionHeader, LocalizationResources.StoragePermissionMessage, "OK");
                 }
 
                 var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Storage });
@@ -126,7 +126,7 @@ namespace MainApp.Views
             }
             else if (status != PermissionStatus.Unknown)
             {
-                await DisplayAlert("Image Location Denied", "Can not continue, try again.", "OK");
+                await DisplayAlert(LocalizationResources.DeniedPermissionsHeader, LocalizationResources.DeniedPermissionsMessage, "OK");
             }
         }
         

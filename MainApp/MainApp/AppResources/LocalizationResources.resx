@@ -153,6 +153,14 @@
     <value>Do you really want to delete this item?</value>
     <comment>Question for delete</comment>
   </data>
+  <data name="DeniedPermissionsHeader" xml:space="preserve">
+    <value>Image Location Denied</value>
+    <comment>Header of the message of missing storage permission</comment>
+  </data>
+  <data name="DeniedPermissionsMessage" xml:space="preserve">
+    <value>Can not continue, try again</value>
+    <comment>Message of missing storage permission</comment>
+  </data>
   <data name="DenoiseLabel" xml:space="preserve">
     <value>Denoise</value>
     <comment>Label for radiogroup Denoise</comment>
@@ -268,6 +276,14 @@
   <data name="SizeError" xml:space="preserve">
     <value>Image maximum size - 8M, 3840x3840</value>
     <comment>Error raised when the image is too big</comment>
+  </data>
+  <data name="StoragePermissionHeader" xml:space="preserve">
+    <value>Storage permission</value>
+    <comment>Header of the message of storage permisson</comment>
+  </data>
+  <data name="StoragePermissionMessage" xml:space="preserve">
+    <value>Need a storage permission to load the image</value>
+    <comment>Message of storage permission</comment>
   </data>
   <data name="StorageSaveButton" xml:space="preserve">
     <value>Save to storage</value>

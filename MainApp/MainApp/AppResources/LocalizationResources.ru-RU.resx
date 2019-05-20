@@ -153,6 +153,14 @@
     <value>Вы действительно хотите удалить этот объект</value>
     <comment>Question for delete</comment>
   </data>
+  <data name="DeniedPermissionsHeader" xml:space="preserve">
+    <value>Отказ в доступе к хранилищу</value>
+    <comment>Header of the message of missing storage permission</comment>
+  </data>
+  <data name="DeniedPermissionsMessage" xml:space="preserve">
+    <value>Нельзя продолжить, повторите попытку</value>
+    <comment>Message of missing storage permission</comment>
+  </data>
   <data name="DenoiseLabel" xml:space="preserve">
     <value>Удаление шумов</value>
     <comment>Label for radiogroup Denoise</comment>
@@ -268,6 +276,14 @@
   <data name="SizeError" xml:space="preserve">
     <value>Максимальный размер изображения - 8M, 3840x3840</value>
     <comment>Error raised when the image is too big</comment>
+  </data>
+  <data name="StoragePermissionHeader" xml:space="preserve">
+    <value>Доступ к хранилищу</value>
+    <comment>Header of the message of storage permisson</comment>
+  </data>
+  <data name="StoragePermissionMessage" xml:space="preserve">
+    <value>Требуется доступ к файлам на устройстве для загрузки изображения</value>
+    <comment>Message of storage permission</comment>
   </data>
   <data name="StorageSaveButton" xml:space="preserve">
     <value>Сохранить на устройство</value>

@@ -26,10 +26,6 @@ namespace MainApp.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            string s = "";
-            foreach (string key in App.Current.Properties.Keys)
-                s += "*" + key;
-            DisplayAlert("Dictionary", s, "OK");
             app.MainPage = new MainPage();
         }
     }
