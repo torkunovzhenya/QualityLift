@@ -18,7 +18,7 @@ namespace MainApp.Services
 
     public interface IDownloader
     {
-        void DownloadFile(string url, string folder, string name);
+        void DownloadFile(string url, string data, string name);
         event EventHandler<DownloadEventArgs> OnFileDownloaded;
     }
 }

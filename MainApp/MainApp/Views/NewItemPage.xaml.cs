@@ -151,16 +151,15 @@ namespace MainApp.Views
             {
                 Item.Uri = ImageExchange.Post(denoise, scale, format, photo.GetStream());
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                await DisplayAlert(LocalizationResources.ErrorHeader, ex.Message, "OK");
+                await DisplayAlert(LocalizationResources.ErrorHeader, LocalizationResources.SizeError, "OK");
                 Loaded = false;
                 return;
             }
             catch (Exception)
             {
-                await DisplayAlert(LocalizationResources.ErrorHeader,
-                    LocalizationResources.ConnectionError, "OK");
+                await DisplayAlert(LocalizationResources.ErrorHeader, LocalizationResources.ConnectionError, "OK");
                 Loaded = false;
                 return;
             }
@@ -168,8 +167,11 @@ namespace MainApp.Views
             
             Item.Id = Guid.NewGuid().ToString();
             Item.Format = format == "jpeg" ? ".jpg" : ".png";
-            Item.Description = $"Time - {DateTime.Now.ToString()}, Scale = {scale}\n" +
-                $"Denoise = {denoise}, Format = {Item.Format}";
+            Item.Description = string.Format("Time - {1}, Scale = {2}\n Denoise = {3}, Format = {4}",
+                DateTime.Now.ToString(),
+                scale,
+                denoise,
+                Item.Format);
             Item.Image.Source = ImageSource.FromUri(new Uri(Item.Uri));
 
             Loaded = true;

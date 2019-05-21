@@ -24,7 +24,7 @@ namespace MainApp.Views
             
             Item = viewModel.Item;
             downloader = DependencyService.Get<IDownloader>();
-            BindingContext = this.viewModel = viewModel;
+            BindingContext = viewModel;
 
             downloader.OnFileDownloaded += OnFileDownloaded;
         }
@@ -44,7 +44,10 @@ namespace MainApp.Views
         
         private void Download(object sender, EventArgs e)
         {
-            downloader.DownloadFile(Item.Uri, App.Current.Properties[$"{Item.Id}data2"].ToString(), Item.Name + Item.Format);
+            if (Item.Uri == "")
+                DisplayAlert(LocalizationResources.ExampleHeader, LocalizationResources.ExampleMessage, "OK");
+            else
+                downloader.DownloadFile(Item.Uri, App.Current.Properties[$"{Item.Id}data2"].ToString(), Item.Name + Item.Format);
         }
 
         private async void OnFileDownloaded(object sender, DownloadEventArgs e)
@@ -64,12 +67,12 @@ namespace MainApp.Views
             await Navigation.PopModalAsync();
         }
 
-        private void Button_Pressed(object sender, EventArgs e)
+        private void ShowButton_Pressed(object sender, EventArgs e)
         {
             ItemImage.Source = Item.Preview.Source;
         }
 
-        private void Button_Released(object sender, EventArgs e)
+        private void ShowButton_Released(object sender, EventArgs e)
         {
             ItemImage.Source = Item.Image.Source;
         }

@@ -5,15 +5,6 @@ using Xamarin.Forms;
 
 namespace MainApp.Models
 {
-    public class ClickedEventArgs : EventArgs
-    {
-        public int Index;
-        public ClickedEventArgs(int index)
-        {
-            Index = index;
-        }
-    }
-
     public class RadioGroup
     {
         public List<RadioButton> Buttons { get; set; }

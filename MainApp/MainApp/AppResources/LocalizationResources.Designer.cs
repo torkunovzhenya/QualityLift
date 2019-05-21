@@ -196,6 +196,24 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Example.
+        /// </summary>
+        public static string ExampleHeader {
+            get {
+                return ResourceManager.GetString("ExampleHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на This is an example image, can&apos;t save to storage.
+        /// </summary>
+        public static string ExampleMessage {
+            get {
+                return ResourceManager.GetString("ExampleMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Error while saving the file.
         /// </summary>
         public static string FailSaveMessage {
@@ -403,7 +421,7 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Show Initial Image.
+        ///   Ищет локализованную строку, похожую на Show Initial Image(Press).
         /// </summary>
         public static string ShowInitialButton {
             get {

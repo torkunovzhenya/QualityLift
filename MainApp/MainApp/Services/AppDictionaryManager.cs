@@ -18,13 +18,16 @@ namespace MainApp.Services
             App.Current.Properties["items"] += $"*{item.Id}";
             App.Current.Properties.Add($"{item.Id}", $"*{item.Name}*{item.Description}*{item.Uri}*{item.Format}*");
 
+            #region SavingFirstImage
             using (Stream file = stream)
             {
                 byte[] data = new byte[file.Length];
                 file.Read(data, 0, data.Length);
                 App.Current.Properties.Add($"{item.Id}data1", Convert.ToBase64String(data));
             }
+            #endregion
 
+            #region SavingSecondImage
             try
             {
                 if (App.Current.Properties["ImageStorage"].ToString() == "On device")
@@ -40,6 +43,7 @@ namespace MainApp.Services
             {
                 App.Current.Properties.Add($"{item.Id}data2", "No data");
             }
+            #endregion
         }
 
         public static void Delete(string id)
@@ -60,15 +64,22 @@ namespace MainApp.Services
 
             foreach (string id in ids)
             {
-                byte[] previewimg = Convert.FromBase64String(App.Current.Properties[$"{id}data1"].ToString());
-
                 //Name, description, Uri and Format
                 string[] elements = App.Current.Properties[id].ToString().Split(new char[] { '*' }, StringSplitOptions.RemoveEmptyEntries);
 
-                ImageSource source = App.Current.Properties[$"{id}data2"].ToString() == "No data" ?
-                    ImageSource.FromUri(new Uri(elements[2])) :
-                    ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(App.Current.Properties[$"{id}data2"].ToString())));
+                //First Image Data
+                byte[] previewimg = Convert.FromBase64String(App.Current.Properties[$"{id}data1"].ToString());
 
+                //Second Image Data
+                ImageSource source;
+                string data2 = App.Current.Properties[$"{id}data2"].ToString();
+
+                if (data2 == "No data")
+                    source = ImageSource.FromUri(new Uri(elements[2]));
+                else
+                    source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(data2)));
+
+                //Creating Item
                 dictItems.Add(new Item
                 {
                     Preview = new Image { Source = ImageSource.FromStream(() => new MemoryStream(previewimg)) },

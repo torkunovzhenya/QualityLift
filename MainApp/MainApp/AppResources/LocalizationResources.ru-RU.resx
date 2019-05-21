@@ -177,6 +177,14 @@
     <value>(Пример)</value>
     <comment>Example string</comment>
   </data>
+  <data name="ExampleHeader" xml:space="preserve">
+    <value>Пример</value>
+    <comment>Header of the message</comment>
+  </data>
+  <data name="ExampleMessage" xml:space="preserve">
+    <value>Это пример изображения, нельзя сохранить на устройство</value>
+    <comment>Message of saving example</comment>
+  </data>
   <data name="FailSaveMessage" xml:space="preserve">
     <value>Ошибка во время сохранения файла</value>
     <comment>Fail of saving image to storage</comment>
@@ -270,7 +278,7 @@
     <comment>Menu item "Language"</comment>
   </data>
   <data name="ShowInitialButton" xml:space="preserve">
-    <value>Показать исходное изображение</value>
+    <value>Показать исходное изображение(Зажать)</value>
     <comment>Buttun to show initial image</comment>
   </data>
   <data name="SizeError" xml:space="preserve">

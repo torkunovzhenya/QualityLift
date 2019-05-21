@@ -29,7 +29,7 @@
                                 LineBreakMode="CharacterWrap"
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="20" 
-                                FontAttributes="Italic"/>
+                                FontAttributes="Bold"/>
                                 <Label Text="{Binding Description}" 
                                 TextColor="#FF0245"
                                 LineBreakMode="TailTruncation"

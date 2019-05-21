@@ -46,7 +46,7 @@ namespace MainApp.Droid
                 else
                     webClient.DownloadFileAsync(new Uri(url), pathToNewFile);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 OnFileDownloaded?.Invoke(this, new DownloadEventArgs(false));
             }

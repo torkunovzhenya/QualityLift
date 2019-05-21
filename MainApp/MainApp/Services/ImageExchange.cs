@@ -14,23 +14,18 @@ namespace MainApp.Services
         private static readonly Encoding encoding = Encoding.UTF8;
         public static HttpWebResponse MultipartFormDataPost(Dictionary<string, object> postParameters)
         {
-            string formDataBoundary = String.Format("----------{0:N}", Guid.NewGuid());
-            string contentType = "multipart/form-data; boundary=" + formDataBoundary;
-            string postUrl = "https://waifu2x.booru.pics/Home/upload";
-            string userAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.99 YaBrowser/19.1.2.258 Yowser/2.5 Safari/537.36";
+            string DataBoundary = String.Format("----------{0:N}", Guid.NewGuid());
+            string ContentType = "multipart/form-data; boundary=" + DataBoundary;
+            string PostUrl = "https://waifu2x.booru.pics/Home/upload";
+            string UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.99 YaBrowser/19.1.2.258 Yowser/2.5 Safari/537.36";
 
-            byte[] formData = GetMultipartFormData(postParameters, formDataBoundary);
+            byte[] formData = GetMultipartFormData(postParameters, DataBoundary);
 
-            return PostForm(postUrl, userAgent, contentType, formData);
+            return PostForm(PostUrl, UserAgent, ContentType, formData);
         }
         private static HttpWebResponse PostForm(string postUrl, string userAgent, string contentType, byte[] formData)
         {
             HttpWebRequest request = WebRequest.Create(postUrl) as HttpWebRequest;
-
-            //if (request == null)
-            //{
-            //    throw new NullReferenceException("request is not a http request");
-            //}
 
             #region RequestProperties
             request.Method = "POST";
@@ -55,47 +50,43 @@ namespace MainApp.Services
 
         private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
         {
-            Stream formDataStream = new System.IO.MemoryStream();
+            Stream formDataStream = new MemoryStream();
             bool needsCLRF = false;
 
-            foreach (var param in postParameters)
+            foreach (var parameter in postParameters)
             {
                 if (needsCLRF)
                     formDataStream.Write(encoding.GetBytes("\r\n"), 0, encoding.GetByteCount("\r\n"));
 
                 needsCLRF = true;
 
-                if (param.Value is FileParameter)
+                if (parameter.Value is FileParameter)
                 {
-                    FileParameter fileToUpload = (FileParameter)param.Value;
-
-                    // Add just the first part of this param, since we will write the file data directly to the Stream
+                    FileParameter fileToUpload = (FileParameter)parameter.Value;
+                    
                     string header = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\nContent-Type: {3}\r\n\r\n",
                         boundary,
-                        param.Key,
-                        fileToUpload.FileName ?? param.Key,
-                        fileToUpload.ContentType ?? "application/octet-stream");
+                        parameter.Key,
+                        fileToUpload.FileName,
+                        fileToUpload.ContentType);
 
                     formDataStream.Write(encoding.GetBytes(header), 0, encoding.GetByteCount(header));
-
-                    // Write the file data directly to the Stream, rather than serializing it to a string.
                     formDataStream.Write(fileToUpload.File, 0, fileToUpload.File.Length);
                 }
                 else
                 {
                     string postData = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
                         boundary,
-                        param.Key,
-                        param.Value);
+                        parameter.Key,
+                        parameter.Value);
+
                     formDataStream.Write(encoding.GetBytes(postData), 0, encoding.GetByteCount(postData));
                 }
             }
-
-            // Add the end of the request.  Start with a newline
-            string footer = "\r\n--" + boundary + "--\r\n";
-            formDataStream.Write(encoding.GetBytes(footer), 0, encoding.GetByteCount(footer));
-
-            // Dump the Stream into a byte[]
+            
+            string end = "\r\n--" + boundary + "--\r\n";
+            formDataStream.Write(encoding.GetBytes(end), 0, encoding.GetByteCount(end));
+            
             formDataStream.Position = 0;
             byte[] formData = new byte[formDataStream.Length];
             formDataStream.Read(formData, 0, formData.Length);
@@ -109,8 +100,6 @@ namespace MainApp.Services
             public byte[] File { get; set; }
             public string FileName { get; set; }
             public string ContentType { get; set; }
-            public FileParameter(byte[] file) : this(file, null) { }
-            public FileParameter(byte[] file, string filename) : this(file, filename, null) { }
             public FileParameter(byte[] file, string filename, string contenttype)
             {
                 File = file;
@@ -125,7 +114,7 @@ namespace MainApp.Services
     {
         public static string GetImageUrl(string s)
         {
-            string ur = "";
+            string hash = "";
             string find = "hash=\" + \"";
 
             int index = s.IndexOf(find);
@@ -141,14 +130,13 @@ namespace MainApp.Services
             index += find.Length;
             char c;
 
-            do
-            {
+            do{
                 c = s[index];
-                ur += c;
+                hash += c;
                 index++;
             } while (c != '_');
 
-            return ur;
+            return hash;
         }
 
         public static string Post(int denoise, int scale, string format, Stream filestream)
@@ -161,12 +149,13 @@ namespace MainApp.Services
                 filestream.Read(data, 0, data.Length);
             }
 
-            // Generate post objects
+            #region Generation of Post Objects
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("img", new FormUpload.FileParameter(data, "preimage." + format, "image/" + format));
             Parameters.Add("denoise", denoise.ToString());
             Parameters.Add("scale", scale.ToString());
             Parameters.Add("submit", "");
+            #endregion
 
             // Create request and receive response
             string ans;

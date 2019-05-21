@@ -10,7 +10,7 @@ namespace MainApp.Models
     {
         public string Name { get; set; }
         public bool Status { get; set; }
-        public ImageButton ImageButton { get; }
+        public ImageButton ImageButton { get; set; }
         public Button Button { get; set; }
         public int Index { get; set; }
         public RadioButton(string name, bool status, int index, Button button)
