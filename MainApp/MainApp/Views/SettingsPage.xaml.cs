@@ -66,6 +66,7 @@ namespace MainApp.Views
         {
             Title = LocalizationResources.SettingsLabel;
             MenuPage.menuItems[1].Title = LocalizationResources.SettingsLabel;
+            MenuPage.menuItems[2].Title = LocalizationResources.HelpTitle;
 
             LangButton.Text = LocalizationResources.ChangeLanguageButton;
 
@@ -76,6 +77,8 @@ namespace MainApp.Views
             Theme.Buttons[1].Button.Text = LocalizationResources.LightLabel;
             ImageStorage.Buttons[0].Button.Text = LocalizationResources.OnDeviceLabel;
             ImageStorage.Buttons[1].Button.Text = LocalizationResources.OnInternetLabel;
+
+            MainPage.MenuPages.Remove((int)MenuItemType.Help);
         }
 
         private void ChangeTheme()

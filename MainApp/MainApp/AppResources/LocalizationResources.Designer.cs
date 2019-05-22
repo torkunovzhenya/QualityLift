@@ -97,7 +97,8 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Couldn&apos;t reach the server. Please try again later..
+        ///   Ищет локализованную строку, похожую на Couldn&apos;t reach the server.
+        ///Please try again later..
         /// </summary>
         public static string ConnectionError {
             get {
@@ -246,6 +247,38 @@ namespace MainApp.AppResources {
         public static string GreetingLabel {
             get {
                 return ResourceManager.GetString("GreetingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Help.
+        /// </summary>
+        public static string HelpTitle {
+            get {
+                return ResourceManager.GetString("HelpTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на 1) At main page click on the Toolbar button &quot;Add&quot;(plus icon).
+        ///2) Then customize propeties and name for developing image.
+        ///3) Load the image and click the Toolbar button &quot;Save&quot;.
+        ///4) After that your image will be appeared to list at main page.
+        ///5) If you want to save the image to storage, 
+        ///then click on this image at list, click the button &quot;Save to storage&quot;..
+        /// </summary>
+        public static string HowToUseAnsLabel {
+            get {
+                return ResourceManager.GetString("HowToUseAnsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на How to use?.
+        /// </summary>
+        public static string HowToUseLabel {
+            get {
+                return ResourceManager.GetString("HowToUseLabel", resourceCulture);
             }
         }
         
@@ -484,11 +517,39 @@ namespace MainApp.AppResources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Theme has been changed. Restart the app..
+        ///   Ищет локализованную строку, похожую на Theme has been changed. 
+        ///Restart the app..
         /// </summary>
         public static string ThemeMessage {
             get {
                 return ResourceManager.GetString("ThemeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Images are saved to &quot;Device\QualityLift Images\&quot;.
+        /// </summary>
+        public static string WhereSavesAnsLabel {
+            get {
+                return ResourceManager.GetString("WhereSavesAnsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Where are processed images saved?.
+        /// </summary>
+        public static string WhereSavesLabel {
+            get {
+                return ResourceManager.GetString("WhereSavesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Who created?.
+        /// </summary>
+        public static string WhoCreated {
+            get {
+                return ResourceManager.GetString("WhoCreated", resourceCulture);
             }
         }
         

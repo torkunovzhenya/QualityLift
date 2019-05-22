@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MainApp.Views.HelpPage"
+             xmlns:local="clr-namespace:MainApp.AppResources"
+             xmlns:colores="clr-namespace:MainApp.Models"
+             xmlns:vm="clr-namespace:MainApp.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:HelpViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="{x:Static local:LocalizationResources.WhereSavesLabel}" FontAttributes="Bold"
+                FontSize="Medium" TextColor="#FF0245"/>
+
+            <Label Text="{x:Static local:LocalizationResources.WhereSavesAnsLabel}"
+                FontSize="Medium" TextColor="#FF0245"/>
+
+            <Label Text="{x:Static local:LocalizationResources.HowToUseLabel}" FontAttributes="Bold"
+                FontSize="Medium" TextColor="#FF0245"/>
+
+            <Label Text="{x:Static local:LocalizationResources.HowToUseAnsLabel}"
+                FontSize="Medium" TextColor="#FF0245"/>
+
+            <Label Text="{x:Static local:LocalizationResources.WhoCreated}" FontAttributes="Bold"
+                FontSize="Medium" TextColor="#FF0245"/>
+
+            <Label Text="{x:Static local:LocalizationResources.AboutLabel}"
+                FontSize="Medium" TextColor="#FF0245"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

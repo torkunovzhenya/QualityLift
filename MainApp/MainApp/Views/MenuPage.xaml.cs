@@ -17,7 +17,8 @@ namespace MainApp.Views
         public static ObservableCollection<HomeMenuItem> menuItems = new ObservableCollection<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.QualityLift, Title="QualityLift" },
-                new HomeMenuItem {Id = MenuItemType.Settings, Title=LocalizationResources.SettingsLabel }
+                new HomeMenuItem {Id = MenuItemType.Settings, Title=LocalizationResources.SettingsLabel },
+                new HomeMenuItem {Id = MenuItemType.Help, Title=LocalizationResources.HelpTitle }
             };
         public MenuPage()
         {

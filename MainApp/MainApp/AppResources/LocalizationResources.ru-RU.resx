@@ -201,6 +201,23 @@
     <value>Добро пожаловать в QualityLift!</value>
     <comment> Greeting Label</comment>
   </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Помощь</value>
+    <comment>Title of menu item</comment>
+  </data>
+  <data name="HowToUseAnsLabel" xml:space="preserve">
+    <value>1) На главной странице нажмите на кнопку панели управления "Добавить"(значок плюса).
+2) Выберите настройки и имя для обработки изображения.
+3) Загрузите изображение и нажмите на кнопку панели управления "Сохранить".
+4) После этого ваше изображение появится в списке на главной странице.
+5) Если вы хотите сохранить ихображение на устройство, 
+нажмите на изображение, далее на кнопку "Сохранить на устройство".</value>
+    <comment>Help message(How to use)</comment>
+  </data>
+  <data name="HowToUseLabel" xml:space="preserve">
+    <value>Как использовать?</value>
+    <comment>Section of Help(How to use)</comment>
+  </data>
   <data name="ImageStoreLabel" xml:space="preserve">
     <value>Где хранить обработанные изображения</value>
     <comment>Label for radiogroup ImageStorage</comment>
@@ -308,6 +325,18 @@
   <data name="ThemeMessage" xml:space="preserve">
     <value>Тема была изменена. Перезапустите приложение.</value>
     <comment>Message of changing theme</comment>
+  </data>
+  <data name="WhereSavesAnsLabel" xml:space="preserve">
+    <value>Изображния сохраняются в "Устройство\QualityLift Images\"</value>
+    <comment>Help message</comment>
+  </data>
+  <data name="WhereSavesLabel" xml:space="preserve">
+    <value>Где сохраняются обработанные изображения?</value>
+    <comment>Section of Help</comment>
+  </data>
+  <data name="WhoCreated" xml:space="preserve">
+    <value>Who created?</value>
+    <comment>About app question</comment>
   </data>
   <data name="YesAns" xml:space="preserve">
     <value>Да</value>

@@ -134,7 +134,8 @@
     <comment>Label to change language</comment>
   </data>
   <data name="ConnectionError" xml:space="preserve">
-    <value>Couldn't reach the server. Please try again later.</value>
+    <value>Couldn't reach the server.
+Please try again later.</value>
     <comment>Error raised when lost connection</comment>
   </data>
   <data name="DarkLabel" xml:space="preserve">
@@ -200,6 +201,23 @@
   <data name="GreetingLabel" xml:space="preserve">
     <value>Welcome to Quality Lift!</value>
     <comment>Greeting Label</comment>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Help</value>
+    <comment>Title of menu item</comment>
+  </data>
+  <data name="HowToUseAnsLabel" xml:space="preserve">
+    <value>1) At main page click on the Toolbar button "Add"(plus icon).
+2) Then customize propeties and name for developing image.
+3) Load the image and click the Toolbar button "Save".
+4) After that your image will be appeared to list at main page.
+5) If you want to save the image to storage, 
+then click on this image at list, click the button "Save to storage".</value>
+    <comment>Help message(How to use)</comment>
+  </data>
+  <data name="HowToUseLabel" xml:space="preserve">
+    <value>How to use?</value>
+    <comment>Section of Help(How to use)</comment>
   </data>
   <data name="ImageStoreLabel" xml:space="preserve">
     <value>Where to store processed images</value>
@@ -306,8 +324,21 @@
     <comment>Label for radiogroup Theme</comment>
   </data>
   <data name="ThemeMessage" xml:space="preserve">
-    <value>Theme has been changed. Restart the app.</value>
+    <value>Theme has been changed. 
+Restart the app.</value>
     <comment>Message of changing theme</comment>
+  </data>
+  <data name="WhereSavesAnsLabel" xml:space="preserve">
+    <value>Images are saved to "Device\QualityLift Images\"</value>
+    <comment>Help message(Where saved)</comment>
+  </data>
+  <data name="WhereSavesLabel" xml:space="preserve">
+    <value>Where are processed images saved?</value>
+    <comment>Section of Help(Where saved)</comment>
+  </data>
+  <data name="WhoCreated" xml:space="preserve">
+    <value>Who created?</value>
+    <comment>About app question</comment>
   </data>
   <data name="YesAns" xml:space="preserve">
     <value>Yes</value>

@@ -10,7 +10,7 @@ namespace MainApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
-        Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+        public static Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
         public MainPage()
         {
             InitializeComponent();
@@ -31,6 +31,9 @@ namespace MainApp.Views
                         break;
                     case (int)MenuItemType.Settings:
                         MenuPages.Add(id, new NavigationPage(new SettingsPage()));
+                        break;
+                    case (int)MenuItemType.Help:
+                        MenuPages.Add(id, new NavigationPage(new HelpPage()));
                         break;
                 }
             }

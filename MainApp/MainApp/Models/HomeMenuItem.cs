@@ -8,7 +8,8 @@ namespace MainApp.Models
     public enum MenuItemType
     {
         QualityLift,
-        Settings
+        Settings,
+        Help
     }
     public class HomeMenuItem : INotifyPropertyChanged
     {
