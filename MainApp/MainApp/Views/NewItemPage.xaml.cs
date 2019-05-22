@@ -167,7 +167,7 @@ namespace MainApp.Views
             
             Item.Id = Guid.NewGuid().ToString();
             Item.Format = format == "jpeg" ? ".jpg" : ".png";
-            Item.Description = string.Format("Time - {1}, Scale = {2}\n Denoise = {3}, Format = {4}",
+            Item.Description = string.Format("Time - {0}, Scale = {1}\n Denoise = {2}, Format = {3}",
                 DateTime.Now.ToString(),
                 scale,
                 denoise,
@@ -186,11 +186,6 @@ namespace MainApp.Views
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
-        }
-
-        private void TextLabel_Completed(object sender, EventArgs e)
-        {
-            Item.Name = TextLabel.Text;
         }
 
         private void AddItem(Item item)

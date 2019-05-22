@@ -13,10 +13,8 @@ namespace MainApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class StartPage : ContentPage
 	{
-        App app;
-		public StartPage (App app)
+		public StartPage ()
 		{
-            this.app = app;
 			InitializeComponent ();
 
             GreetingLabel.Text = LocalizationResources.GreetingLabel;
@@ -26,7 +24,7 @@ namespace MainApp.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            app.MainPage = new MainPage();
+            App.Current.MainPage = new MainPage();
         }
     }
 }

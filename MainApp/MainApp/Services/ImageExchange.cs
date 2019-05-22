@@ -42,7 +42,6 @@ namespace MainApp.Services
             using (Stream requestStream = request.GetRequestStream())
             {
                 requestStream.Write(formData, 0, formData.Length);
-                requestStream.Close();
             }
 
             return request.GetResponse() as HttpWebResponse;
@@ -94,21 +93,20 @@ namespace MainApp.Services
 
             return formData;
         }
-
-        public class FileParameter
-        {
-            public byte[] File { get; set; }
-            public string FileName { get; set; }
-            public string ContentType { get; set; }
-            public FileParameter(byte[] file, string filename, string contenttype)
-            {
-                File = file;
-                FileName = filename;
-                ContentType = contenttype;
-            }
-        }
     }
 
+    public class FileParameter
+    {
+        public byte[] File { get; set; }
+        public string FileName { get; set; }
+        public string ContentType { get; set; }
+        public FileParameter(byte[] file, string filename, string contenttype)
+        {
+            File = file;
+            FileName = filename;
+            ContentType = contenttype;
+        }
+    }
 
     public static class ImageExchange
     {
@@ -142,16 +140,14 @@ namespace MainApp.Services
         public static string Post(int denoise, int scale, string format, Stream filestream)
         {
             byte[] data;
-
-            using (filestream)
-            {
-                data = new byte[filestream.Length];
-                filestream.Read(data, 0, data.Length);
-            }
+            
+            data = new byte[filestream.Length];
+            filestream.Read(data, 0, data.Length);
+            filestream.Dispose();
 
             #region Generation of Post Objects
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("img", new FormUpload.FileParameter(data, "preimage." + format, "image/" + format));
+            Parameters.Add("img", new FileParameter(data, "preimage." + format, "image/" + format));
             Parameters.Add("denoise", denoise.ToString());
             Parameters.Add("scale", scale.ToString());
             Parameters.Add("submit", "");

@@ -25,11 +25,11 @@ namespace MainApp
 
             Styles.ChangeThemeColor();
 
-            InitializeComponent();
-
             LocalizationResources.Culture = new CultureInfo(App.Current.Properties["Language"].ToString());
 
-            MainPage = new StartPage(this);
+            InitializeComponent();
+
+            MainPage = new StartPage();
         }
 
         protected override void OnStart()

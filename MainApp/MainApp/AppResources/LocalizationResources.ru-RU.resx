@@ -335,7 +335,7 @@
     <comment>Section of Help</comment>
   </data>
   <data name="WhoCreated" xml:space="preserve">
-    <value>Who created?</value>
+    <value>Кто разработал?</value>
     <comment>About app question</comment>
   </data>
   <data name="YesAns" xml:space="preserve">

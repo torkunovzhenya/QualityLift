@@ -18,8 +18,7 @@
                    FontSize="Medium" TextColor="#FF0245"/>
                 <Entry x:Name="TextLabel" 
                    Placeholder="{x:Static local:LocalizationResources.NamePlaceholder}" PlaceholderColor="#D10038" 
-                   FontSize="Small" TextColor="#FF0245" 
-                   Completed="TextLabel_Completed"/>
+                   FontSize="Small" TextColor="#FF0245"/>
                 <Label Text="{x:Static local:LocalizationResources.DescriptionLabel}" FontAttributes="Bold"
                    FontSize="Medium" TextColor="#FF0245"/>
                 <Label x:Name="DescriptionLabel" 

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MainApp.AppResources.LocalizationResources">
+    <Position X="19.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EYAAZIAUgkAAARgA4IqJEBnAAQkCABCQCAAApISAhoE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Models.HomeMenuItem" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAEAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HomeMenuItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MainApp.Models.Item" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAgAABAACAQAAAAAAAA=</HashCode>
+      <FileName>Models\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Models.RadioButton">
+    <Position X="17.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAEAAAAAAAAEAAAAAQAAAgAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\RadioButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Models.RadioGroup">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEQAgAAAABAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RadioGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Models.Styles">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAQAAAAAoAAAAAAAACAAAAQAAAQEEAAAAgAA=</HashCode>
+      <FileName>Models\Styles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Services.AppDictionaryManager">
+    <Position X="14" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Services\AppDictionaryManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Services.DownloadEventArgs">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IDownloader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Services.FormUpload">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAoAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAE=</HashCode>
+      <FileName>Services\ImageExchange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Services.FileParameter">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAQAABAAAA=</HashCode>
+      <FileName>Services\ImageExchange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Services.ImageExchange">
+    <Position X="10.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Services\ImageExchange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Services.MockDataStore" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAgAABAAAABAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Services\MockDataStore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MainApp.ViewModels.BaseViewModel">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAIEAAAQBAgAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MainApp.ViewModels.HelpViewModel">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\HelpViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.ViewModels.ItemDetailViewModel">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ItemDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.ViewModels.ItemsViewModel">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAABAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ItemsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.ViewModels.SettingsViewModel">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.HelpPage" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\HelpPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.ItemDetailPage">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAABAAQAABUAAAAAAAAQAEAAAAAAAA=</HashCode>
+      <FileName>Views\ItemDetailPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.ItemsPage">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ItemsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.MainPage">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACA=</HashCode>
+      <FileName>Views\MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.MenuPage">
+    <Position X="12.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Views\MenuPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.NewItemPage">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABIAEIAAAAAAIACAAGgAAAgAAAAAAAAAEAAAI=</HashCode>
+      <FileName>Views\NewItemPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.SettingsPage">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAABAAAgAQAAIAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Views\SettingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.Views.StartPage">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\StartPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApp.App">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MainApp.Services.IDataStore&lt;T&gt;">
+    <Position X="10.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAABAAAABAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Services\IDataStore.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MainApp.Services.IDownloader">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IDownloader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MainApp.Models.MenuItemType">
+    <Position X="10.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\HomeMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
